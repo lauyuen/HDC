@@ -1,5 +1,6 @@
 *
 !.gitignore
 !.dir_colors
+!.zshenv
 !.zshrc
 !/.oh-my-zsh/
