@@ -1,4 +1,5 @@
 if [[ $HOMENAME == "red" ]] {
+	export HOME=/cs/home/$USER
         export LD_LIBRARY_PATH=/cs/local/lib:/cse/home/cse03307/os/lib;
         export PATH=/cs/home/cse03307/python/bin:/cs/home/cse03307/perl5/lib/perl5/auto/share/dist/Cope:/cse/home/cse03307/os/bin:/cs/local/bin:/usr/lib64/qt-3.3/bin:/usr/bin:/bin:/usr/sbin:/sbin:/xsys/bin;
         export C_INCLUDE_PATH=/cse/home/cse03307/os/include;

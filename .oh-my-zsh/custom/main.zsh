@@ -10,7 +10,6 @@
 ##---------------------------------------------------[ Exports ]
 HISTFILE=~/.histfile; HISTSIZE=2048; SAVEHIST=2048
 CDPATH='(.. ~);'
-HOME=/cs/home/$USER
 MANPATH=/opt/local/share/man:$MANPATH
 BROWSER='chromium'; EDITOR='emacsclient'; PAGER='less'
 if [ "$TERM" = rxvt-unicode-256color ]; then
