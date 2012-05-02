@@ -1,6 +1,7 @@
 *
 !.gitignore
 !.dir_colors
+!.ls++.conf
 !.zshenv
 !.zshrc
 !/.oh-my-zsh/
