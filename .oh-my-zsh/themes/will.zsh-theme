@@ -5,7 +5,12 @@
 
 PROMPT='%{$fg_bold[magenta]%}$(git_prompt_info) %F{208}%c%f
 %{$fg_bold[white]%}%# %{$reset_color%}'
-RPROMPT='%B%F{039}%n%f%{$fg_bold[white]%}@%F{154}%m%f%{$reset_color%}'
+if [[ "$USERNAME" == *lauyuen* ]] || [ "$USERNAME" = "cse03307" ]
+then
+  RPROMPT='%B%F{160}l%f%F{196}a%f%F{202}u%f%F{208}y%f%F{214}u%f%F{220}e%f%F{226}n%f%{$fg_bold[white]%}@%F{154}%m%f%{$reset_color%}'
+else
+  RPROMPT='%B%F{124}%n%f%{$fg_bold[white]%}@%F{154}%m%f%{$reset_color%}'
+fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{154}±|%f%F{124}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
