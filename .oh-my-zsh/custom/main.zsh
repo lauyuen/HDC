@@ -32,7 +32,9 @@ alias emacs="emacs"
 alias ec="emacsclient"
 alias mv="mv -i "
 alias rm="rm -i "
-alias ls="ls++ --potsf"
+if (( $+commands[ls++] )) ; then
+    alias ls="ls++ --potsf"
+fi
 alias javad="javadoc -tag param \
       	     -tag pre.:a:\"Precondition: \" -tag return -d ./doc\
 	     -link http://java.sun.com/javase/6/docs/api/"
