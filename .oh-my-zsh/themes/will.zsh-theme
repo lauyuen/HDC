@@ -16,13 +16,13 @@ RPROMPT=$RPROMPT'%{$fg_bold[white]%}@'
 
 if [[ "$HOST" == *constitution* ]]
 then
-  RPROMPT=$RPROMPT'@%F{198}%m%f%{$reset_color%}'
+  RPROMPT=$RPROMPT'%F{198}%m%f%{$reset_color%}'
 elif [[ "$HOST" == *codification* ]]
 then
-  RPROMPT=$RPROMPT'@%F{154}%m%f%{$reset_color%}'
+  RPROMPT=$RPROMPT'%F{154}%m%f%{$reset_color%}'
 elif [[ "$HOST" == *red* ]]
 then
-  RPROMPT=$RPROMPT'@%F{196}%m%f%{$reset_color%}'
+  RPROMPT=$RPROMPT'%F{196}%m%f%{$reset_color%}'
 else
   RPROMPT='%B%F{124}%n%f%'
 fi
