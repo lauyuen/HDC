@@ -12,3 +12,4 @@
 /.oh-my-zsh/cache/*
 !/.emacs.d/
 !/.emacs.d
+!.emacs.d
