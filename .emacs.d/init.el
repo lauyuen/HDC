@@ -79,5 +79,10 @@
  )
 
 ;; Emacs server
-(when (server-running-p)
+(when '(server-running-p)
   (message "Server Already Running ..."))
+
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
