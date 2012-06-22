@@ -1,4 +1,5 @@
 *elc
+*~
 .DS_Store
 
 *
@@ -11,5 +12,3 @@
 /.oh-my-zsh/cache/
 /.oh-my-zsh/cache/*
 !/.emacs.d/
-!/.emacs.d
-!.emacs.d
