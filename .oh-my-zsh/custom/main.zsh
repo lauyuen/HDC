@@ -28,10 +28,13 @@ unsetopt nomatch
 
 
 ##---------------------------------------------------[ Aliases ]
-if (( $+commands[emacs-snapshot] )) ; then
-   alias emacs="emacs-snapshot"
-fi
 alias ec="emacsclient"
+if (( $+commands[emacs-snapshot] )) ; then
+   emacs-snapshot --daemon
+   alias emacs="emacs-snapshot"
+   alias ec="emacsclient.emacs-snapshot"
+fi
+
 alias mv="mv -i "
 alias rm="rm -i "
 if (( $+commands[ls++] )) ; then
