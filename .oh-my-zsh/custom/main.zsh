@@ -28,12 +28,16 @@ unsetopt nomatch
 
 
 ##---------------------------------------------------[ Aliases ]
-alias emacs="emacs"
+if (( $+commands[emacs-snapshot] )) ; then
+   alias emacs="emacs-snapshot"
+fi
 alias ec="emacsclient"
 alias mv="mv -i "
 alias rm="rm -i "
 if (( $+commands[ls++] )) ; then
     alias ls="ls++ --potsf"
+else
+    alias ls="ls --color"
 fi
 alias javad="javadoc -tag param \
       	     -tag pre.:a:\"Precondition: \" -tag return -d ./doc\
