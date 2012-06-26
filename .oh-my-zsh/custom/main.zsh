@@ -18,7 +18,7 @@ fi
 
 ##-----------------------------------------------[ Set Options ]
 setopt auto_cd auto_pushd pushd_ignore_dups pushd_silent
-setopt complete_in_word correctall interactive_comments
+setopt complete_in_word correct interactive_comments
 setopt emacs extended_glob auto_remove_slash
 setopt hist_expire_dups_first hist_ignore_space
 setopt extended_history share_history
@@ -30,7 +30,6 @@ unsetopt nomatch
 ##---------------------------------------------------[ Aliases ]
 alias ec="emacsclient"
 if (( $+commands[emacs-snapshot] )) ; then
-   emacs-snapshot --daemon
    alias emacs="emacs-snapshot"
    alias ec="emacsclient.emacs-snapshot"
 fi
@@ -51,6 +50,7 @@ alias sshcse="ssh -Y red.cse.yorku.ca -l cse03307 exo-open --launch TerminalEmul
 alias matrix="/cs/local/pkg/xfce-4.8.0/bin/Terminal -x matrix -c 5 -l 50 -t \"Will is in the matrix  \" -s 1"
 alias top20="du -ah | sort -rh | head -20"
 alias less="/usr/share/vim/vim72/macros/less.sh"
+alias aptitude="nocorrect aptitude"
 ##------------------------------------------------[ Completion ]
 
 ##---------------------------------------------------[ Exports ]

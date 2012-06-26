@@ -13,40 +13,43 @@
 ;;
 ;; Package Loading
 ;;
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
-(when (not package-archive-contents)
-  (package-refresh-contents))
-(defvar my-packages '(paredit twilight-theme smex
-                              php-mode))
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-(load-theme 'twilight t)
+(if (>= emacs-major-version 24) 
+    (progn
+      (require 'package)
+      (add-to-list 'package-archives
+		   '("marmalade" . "http://marmalade-repo.org/packages/") t)
+      (package-initialize)
+      (when (not package-archive-contents)
+	(package-refresh-contents))
+      (defvar my-packages '(paredit twilight-theme smex
+				    php-mode))
+      (dolist (p my-packages)
+	(when (not (package-installed-p p))
+	  (package-install p)))
+      (load-theme 'twilight t)
 
-(progn
-  (setq yld-system-config (concat user-emacs-directory system-name ".el")
-        yld-user-config (concat user-emacs-directory user-login-name ".el")
-        yld-user-dir (concat user-emacs-directory user-login-name))
+      (progn
+	(setq yld-system-config (concat user-emacs-directory system-name ".el")
+	      yld-user-config (concat user-emacs-directory user-login-name ".el")
+	      yld-user-dir (concat user-emacs-directory user-login-name))
 
-  (setq smex-save-file (concat user-emacs-directory ".smex-items"))
-  (smex-initialize)
-  (global-set-key (kbd "M-x") 'smex)
+	(setq smex-save-file (concat user-emacs-directory ".smex-items"))
+	(smex-initialize)
+	(global-set-key (kbd "M-x") 'smex)
 
-  (defun yld-eval-after-init (form)
-    (let ((func (list 'lambda nil form)))
-      (add-hook 'after-init-hook func)
-      (when after-init-time
-        (eval form))))
+	(defun yld-eval-after-init (form)
+	  (let ((func (list 'lambda nil form)))
+	    (add-hook 'after-init-hook func)
+	    (when after-init-time
+	      (eval form))))
 
-  (yld-eval-after-init
-   '(progn
-      (when (file-exists-p yld-system-config) (load yld-system-config))
-      (when (file-exists-p yld-user-config) (load yld-user-config))
-      (when (file-exists-p yld-user-dir)
-        (mapc 'load (directory-files yld-user-dir t "^[^#].*el$"))))))
+	(yld-eval-after-init
+	 '(progn
+	    (when (file-exists-p yld-system-config) (load yld-system-config))
+	    (when (file-exists-p yld-user-config) (load yld-user-config))
+	    (when (file-exists-p yld-user-dir)
+	      (mapc 'load (directory-files yld-user-dir t "^[^#].*el$"))))))))
+
 
 (defun yld-add-path (p)
   (add-to-list 'load-path (concat user-emacs-directory p)))

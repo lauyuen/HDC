@@ -1,16 +1,18 @@
 
 ;; ----- smex-history -----
 (
+ paredit-mode
+ sh-mode
  server-start
  cd
  5x5
  arp
  dbx
- dig
- erc
 )
 
 ;; ----- smex-data -----
 (
  (server-start . 2)
+ (sh-mode . 1)
+ (paredit-mode . 1)
 )
