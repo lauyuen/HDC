@@ -24,7 +24,7 @@ elif [[ "$HOST" == *red* ]]
 then
   RPROMPT=$RPROMPT'%F{196}%m%f%{$reset_color%}'
 else
-  RPROMPT='%B%F{124}%n%f%'
+  RPROMPT=$RPROMPT'%B%F{84}%m%f%'
 fi
 
 

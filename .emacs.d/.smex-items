@@ -1,18 +1,19 @@
 
 ;; ----- smex-history -----
 (
- paredit-mode
  sh-mode
+ org-indent-mode
+ org-mode
  server-start
  cd
  5x5
  arp
- dbx
 )
 
 ;; ----- smex-data -----
 (
  (server-start . 2)
- (sh-mode . 1)
- (paredit-mode . 1)
+ (org-mode . 1)
+ (org-indent-mode . 1)
+ (sh-mode . 2)
 )
