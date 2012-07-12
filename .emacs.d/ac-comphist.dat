@@ -1,0 +1,114 @@
+((("<=" .
+   [1 0])
+  ("concat" .
+   [1 0 0 0 0 0])
+  ("ace-jump-mode" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("frac# " .
+   [0 0 0 1 0 0])
+  ("signature" .
+   [0 0 0 1 0 0 0 0 0])
+  ("neq# ≠" .
+   [0 0 1 0 0 1])
+  ("sin# " .
+   [0 0 0 1 0])
+  ("autoload-coding-system" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("package-user-dir" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("autoload" .
+   [1 0 0 0 0 1 0 0])
+  ("color-theme-twilight-pkg" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1])
+  ("color-theme-twilight-autoloads" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("twilight-theme" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("directory-files" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("nil" .
+   [13 0 0])
+  ("user-emacs-directory" .
+   [0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("directory-file" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 2])
+  ("dired" .
+   [0 0 0 0 1])
+  ("require" .
+   [4 0 0 1 1 1 0])
+  ("auto-complete" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("Str" .
+   [3 0 0])
+  ("last" .
+   [1 0 0 0])
+  ("split-string" .
+   [0 0 0 0 0 0 0 0 0 0 0 1])
+  ("car" .
+   [3 0 0])
+  ("cons" .
+   [8 0 0 3])
+  ("mapcar" .
+   [1 0 0 0 0 0])
+  ("print" .
+   [5 0 0 0 0])
+  ("yl-package-dir-split" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("setq" .
+   [8 0 0 0])
+  ("package" .
+   [0 0 0 0 0 0 1])
+  ("p" .
+   [2])
+  ("package--dir" .
+   [0 0 0 0 1 0 0 0 1 0 1 1])
+  ("princ" .
+   [1 0 0 0 1])
+  ("package-load-list" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2])
+  ("package-initialize" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("all" .
+   [6 0 0])
+  ("yl-bad-packages" .
+   [4 0 0 0 1 2 2 0 0 0 0 1 0 0 2])
+  ("add-to-list" .
+   [1 0 0 0 0 0 0 1 0 0 2])
+  ("yl-bad-package" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 2])
+  ("progn" .
+   [2 0 0 0 0])
+  ("defvar" .
+   [1 0 0 0 0 0])
+  ("cos" .
+   [2 0 0])
+  ("add-to-history" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("c" .
+   [1])
+  ("color-theme" .
+   [0 0 0 0 0 0 0 0 0 0 3])
+  ("color-theme-twilight" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 3])
+  ("load-path" .
+   [1 0 0 0 0 0 0 0 1])
+  ("concatenate" .
+   [0 0 0 0 0 0 0 1 0 0 0])
+  ("iy-go-to-char" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("iy-go-to-char-backward" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("key-chord-mode" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 1 0])
+  ("key-chord-define" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("key-chord-define-global" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
+  ("ace-jump" .
+   [0 0 0 0 0 0 1 0])
+  ("if" .
+   [1 0])
+  ("server-start" .
+   [0 0 0 0 0 0 0 0 0 0 0 1])
+  ("server-mode" .
+   [0 0 0 0 0 0 0 0 1 0 1])))
