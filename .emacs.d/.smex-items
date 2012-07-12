@@ -1,19 +1,55 @@
 
 ;; ----- smex-history -----
 (
+ load-theme
  sh-mode
- org-indent-mode
- org-mode
  server-start
- cd
- 5x5
- arp
+ package-install
+ byte-compile-file
+ magit-status
+ grep
 )
 
 ;; ----- smex-data -----
 (
- (server-start . 2)
+ (server-start . 3)
  (org-mode . 1)
  (org-indent-mode . 1)
- (sh-mode . 2)
+ (sh-mode . 12)
+ (kill-rectangle . 2)
+ (longlines-mode . 2)
+ (toggle-word-wrap . 2)
+ (visual-line-mode . 2)
+ (yank-rectangle . 2)
+ (menu-bar-mode . 1)
+ (xterm-mouse-mode . 5)
+ (list-colors-display . 1)
+ (org-agenda . 1)
+ (load-theme . 22)
+ (goto-line . 1)
+ (php-mode . 1)
+ (package-install . 28)
+ (rainbow-mode . 17)
+ (set-variable . 1)
+ (mark-all-like-this . 1)
+ (auto-composition-mode . 6)
+ (lisp-interaction-mode . 2)
+ (paredit-mode . 1)
+ (color-theme-xp . 1)
+ (color-theme-twilight . 4)
+ (auto-complete . 5)
+ (ac-start . 2)
+ (auto-complete-mode . 5)
+ (byte-compile-file . 5)
+ (key-chord-mode . 1)
+ (ace-jump-mode . 1)
+ (package-refresh-contents . 2)
+ (rainbow-delimiters-mode . 2)
+ (cvs-status . 2)
+ (grep . 6)
+ (yas/minor-mode . 2)
+ (yas/find-snippets . 4)
+ (yas/load-directory . 1)
+ (magit-status . 1)
+ (pretty-mode . 2)
 )

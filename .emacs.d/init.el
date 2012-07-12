@@ -6,86 +6,118 @@
 ;; LMD:     Wed Oct 27 00:49:12 EDT 2010
 ;;
 
-(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
-  (when (fboundp mode) (funcall mode -1)))
+
+(if window-system
+    (progn
+      (set-face-attribute 'default nil :height 90))
+  (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
+    (when (fboundp mode) (funcall mode -1))))
+
 (setq initial-scratch-message nil
       inhibit-startup-screen t)
 ;;
 ;; Package Loading
 ;;
+(defvar yl-bad-packages '())
 (if (>= emacs-major-version 24) 
     (progn
-      (require 'package)
-      (add-to-list 'package-archives
-		   '("marmalade" . "http://marmalade-repo.org/packages/") t)
-      (package-initialize)
-      (when (not package-archive-contents)
-	(package-refresh-contents))
-      (defvar my-packages '(paredit twilight-theme smex
-				    php-mode))
-      (dolist (p my-packages)
-	(when (not (package-installed-p p))
-	  (package-install p)))
-      (load-theme 'twilight t)
-
-      (progn
-	(setq yld-system-config (concat user-emacs-directory system-name ".el")
-	      yld-user-config (concat user-emacs-directory user-login-name ".el")
-	      yld-user-dir (concat user-emacs-directory user-login-name))
-
-	(setq smex-save-file (concat user-emacs-directory ".smex-items"))
-	(smex-initialize)
-	(global-set-key (kbd "M-x") 'smex)
-
-	(defun yld-eval-after-init (form)
-	  (let ((func (list 'lambda nil form)))
-	    (add-hook 'after-init-hook func)
-	    (when after-init-time
-	      (eval form))))
-
-	(yld-eval-after-init
-	 '(progn
-	    (when (file-exists-p yld-system-config) (load yld-system-config))
-	    (when (file-exists-p yld-user-config) (load yld-user-config))
-	    (when (file-exists-p yld-user-dir)
-	      (mapc 'load (directory-files yld-user-dir t "^[^#].*el$"))))))))
+      (add-to-list 'load-path "~/.emacs.d/emacs24/")
+      (add-to-list 'yl-bad-packages 
+                   '((color-theme  nil)
+                     (color-theme-twilight nil)
+                     (json nil))))
+  (progn
+    (add-to-list 'load-path "~/.emacs.d/emacs23/")
+    (add-to-list 'yl-bad-packages 
+                 '((twilight-theme nil)))))
 
 
-(defun yld-add-path (p)
+(progn
+  (require 'package)
+  (add-to-list 'package-archives
+               '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
+  (setq package-load-list (cons 'all (car yl-bad-packages)))
+
+  
+  (package-initialize)
+  (when (not package-archive-contents)
+    (package-refresh-contents))
+  (defvar my-packages '(paredit smex php-mode))
+  (dolist (p my-packages)
+    (when (not (package-installed-p p))
+      (package-install p)))
+  (setq smex-save-file (concat user-emacs-directory ".smex-items"))
+  (smex-initialize)
+  (global-set-key (kbd "M-x") 'smex)
+  
+  (require 'mark-more-like-this)
+  (global-set-key (kbd "C-<") 'mark-previous-like-this)
+  (global-set-key (kbd "C->") 'mark-next-like-this))
+
+(progn
+  (setq yld-system-config (concat user-emacs-directory system-name ".el")
+        yld-user-config (concat user-emacs-directory user-login-name ".el")
+        yld-user-dir (concat user-emacs-directory user-login-name))
+
+  (defun yld-eval-after-init (form)
+    (let ((func (list 'lambda nil form)))
+      (add-hook 'after-init-hook func)
+      (when after-init-time
+        (eval form))))
+
+  (yld-eval-after-init
+   '(progn
+      (when (file-exists-p yld-system-config) (load yld-system-config))
+      (when (file-exists-p yld-user-config) (load yld-user-config))
+      (when (file-exists-p yld-user-dir)
+        (mapc 'load (directory-files yld-user-dir t "^[^#].*el$"))))))
+
+(defun yl-add-path (p)
   (add-to-list 'load-path (concat user-emacs-directory p)))
 
 ;;
 ;; Custom Variables
 ;;
 (custom-set-variables
- '(custom-safe-themes (quote ("6cfe5b2f818c7b52723f3e121d1157cf9d95ed8923dbc1b47f392da80ef7495d" default)))
-
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(TeX-PDF-mode t)
+ '(TeX-source-correlate-method (quote synctex))
+ '(TeX-source-correlate-mode t)
+ '(TeX-source-correlate-start-server t)
+ '(TeX-view-program-list (quote (("Okular" "okular --unique %o#src:%n%b"))))
+ '(TeX-view-program-selection (quote ((output-pdf "Okular") (output-dvi "xdvi") (output-pdf "xpdf") (output-html "xdg-open"))))
+ '(c-basic-offset 4)
+ '(c-default-style "bsd")
  '(column-number-mode t)
+ '(custom-safe-themes (quote ("6cfe5b2f818c7b52723f3e121d1157cf9d95ed8923dbc1b47f392da80ef7495d" default)))
+ '(delete-selection-mode t)
  '(display-battery-mode t)
  '(display-time-mode t)
- '(display-battery-mode t)
-
+ '(ido-mode (quote buffer) nil (ido))
+ '(indent-tabs-mode nil)
  '(indicate-buffer-boundaries (quote ((t . right) (top . left))))
  '(indicate-empty-lines t)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify))
-
- '(c-default-style "bsd")
- '(c-basic-offset 4)
+ '(recentf-mode t)
+ '(safe-local-variable-values (quote ((time-stamp-active . t))))
  '(save-place t nil (saveplace))
-
  '(show-paren-mode t)
  '(transient-mark-mode t)
- '(indent-tabs-mode nil)
- '(delete-selection-mode t)
- '(ido-mode 'buffer)
- '(recentf-mode t)
- )
+ '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 
 ;; Emacs server
-(when '(server-running-p)
-  (message "Server Already Running ..."))
+(require 'server)
+(when (and (functionp 'server-running-p) (not (server-running-p)))
+  (server-start))
 
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+(custom-set-faces
+ '(org-hide ((t (:foreground "black")))))
+

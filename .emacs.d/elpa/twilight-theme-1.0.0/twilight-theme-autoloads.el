@@ -3,16 +3,16 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "twilight-theme" "twilight-theme.el" (20452
-;;;;;;  42730))
+;;;### (autoloads nil "twilight-theme" "twilight-theme.el" (20475
+;;;;;;  23332))
 ;;; Generated autoloads from twilight-theme.el
 
 (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name))))
 
 ;;;***
 
-;;;### (autoloads nil nil ("twilight-theme-pkg.el") (20452 42730
-;;;;;;  981880))
+;;;### (autoloads nil nil ("twilight-theme-pkg.el") (20475 23332
+;;;;;;  479679))
 
 ;;;***
 

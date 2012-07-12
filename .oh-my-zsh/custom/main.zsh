@@ -26,13 +26,40 @@ setopt list_ambiguous list_types
 setopt nobgnice
 unsetopt nomatch
 
-
-##---------------------------------------------------[ Aliases ]
+##--------------------------------------------[ Emacs Goodness ]
 alias ec="emacsclient"
 if (( $+commands[emacs-snapshot] )) ; then
    alias emacs="emacs-snapshot"
    alias ec="emacsclient.emacs-snapshot"
 fi
+
+checkemacs() {
+    server=/tmp/emacs${UID}/server
+
+#  if ! fuser ${server} 2> /dev/null ; then
+#      fuser -k ${server}
+#    rm -f ${server}
+#  fi
+
+  if [ ! -S ${server} ] ; then
+      emacs --daemon
+      until [ -S ${server} ] ; do
+          sleep 1s
+      done
+  fi
+  return true;
+}
+
+e () {
+    checkemacs && EDITOR="emacsclient" $EDITOR -t "$@"
+}
+
+E () {
+    checkemacs && SUDO_EDITOR="emacsclient" sudoedit "$@"
+}
+
+##---------------------------------------------------[ Aliases ]
+
 
 alias mv="mv -i "
 alias rm="rm -i "

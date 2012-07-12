@@ -4,7 +4,7 @@
 # based on robbyrussell's shell but louder!
 
 PROMPT='%{$fg_bold[magenta]%}$(git_prompt_info) %F{208}%c%f
-%{$fg_bold[white]%}%# %{$reset_color%}'
+%{$fg_bold[black]%}%# %{$reset_color%}'
 if [[ "$USERNAME" == *lauyuen* ]] || [ "$USERNAME" = "cse03307" ]
 then
   RPROMPT='%B%F{160}l%f%F{196}a%f%F{202}u%f%F{208}y%f%F{214}u%f%F{220}e%f%F{226}n%f'
@@ -12,7 +12,7 @@ else
   RPROMPT='%B%F{124}%n%f%'
 fi
 
-RPROMPT=$RPROMPT'%{$fg_bold[white]%}@'
+RPROMPT=$RPROMPT'%{$fg_bold[black]%}@'
 
 if [[ "$HOST" == *constitution* ]]
 then
