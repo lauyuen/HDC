@@ -10,7 +10,7 @@
 !.zshrc
 !.oh-my-zsh/
 !.oh-my-zsh/*
-.oh-my-zsh/cache/
+.oh-my-zsh/cache
 .oh-my-zsh/cache/*
 !.emacs.d/
 !.emacs.d/*
