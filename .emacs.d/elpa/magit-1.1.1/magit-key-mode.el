@@ -1,6 +1,6 @@
 (require 'magit)
 
-(if (<= emacs-major-version 24)
+(if (< emacs-major-version 24)
     (require 'assoc))
 (eval-when-compile (require 'cl))
 
