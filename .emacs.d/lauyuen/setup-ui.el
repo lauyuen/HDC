@@ -17,3 +17,28 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (global-undo-tree-mode)
+
+(sml/setup)
+(custom-set-variables
+ '(sml/hidden-modes (quote ("AC" "yas" "hc" "Undo-Tree" "hl-p")))
+ '(sml/inactive-background-color "color-234")
+ '(sml/active-background-color "color-16")
+ '(sml/show-battery nil)
+ '(sml/show-time t))
+
+(add-to-list 'sml/replacer-regexp-list '("^~/Notes/" ":Note:"))
+(add-to-list 'sml/replacer-regexp-list '("^~/Dropbox/" ":DB:"))
+(add-to-list 'sml/replacer-regexp-list '("^:DB:will" ":will:")) 
+(add-to-list 'sml/replacer-regexp-list '("^:will:School/current" ":school:")) 
+
+(yl-add-path "/lauyuen/vendors/multiple-cursors.el")
+(yl-add-path "/lauyuen/vendors/hardcore-mode.el")
+
+(global-rainbow-delimiters-mode 1)
+
+(setq too-hardcore-backspace nil)
+(setq too-hardcore-return t)
+(require 'hardcore-mode)
+(global-hardcore-mode)
+
+(require 'sudo-ext)

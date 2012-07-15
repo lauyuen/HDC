@@ -18,6 +18,7 @@
 ;;
 ;; Package Loading
 ;;
+
 (defvar yl-bad-packages '())
 (if (>= emacs-major-version 24) 
     (progn
@@ -36,6 +37,8 @@
   (require 'package)
   (add-to-list 'package-archives
                '("marmalade" . "http://marmalade-repo.org/packages/") t)
+  (add-to-list 'package-archives
+               '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
   (setq package-load-list (cons 'all (car yl-bad-packages)))
 
@@ -93,11 +96,9 @@
  '(c-basic-offset 4)
  '(c-default-style "bsd")
  '(column-number-mode t)
- '(custom-safe-themes (quote ("6cfe5b2f818c7b52723f3e121d1157cf9d95ed8923dbc1b47f392da80ef7495d" default)))
  '(delete-selection-mode t)
- '(display-battery-mode t)
  '(display-time-mode t)
- '(ido-mode (quote buffer) nil (ido))
+ '(ido-enable-flex-matching t)
  '(indent-tabs-mode nil)
  '(indicate-buffer-boundaries (quote ((t . right) (top . left))))
  '(indicate-empty-lines t)
@@ -105,6 +106,11 @@
  '(safe-local-variable-values (quote ((time-stamp-active . t))))
  '(save-place t nil (saveplace))
  '(show-paren-mode t)
+ '(sml/active-background-color "color-16")
+ '(sml/hidden-modes (quote ("AC" "yas" "hc" "Undo-Tree" "hl-p")))
+ '(sml/inactive-background-color "color-234")
+ '(sml/show-battery nil)
+ '(sml/show-time t)
  '(transient-mark-mode t)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 
@@ -119,5 +125,14 @@
       `((".*" ,temporary-file-directory t)))
 
 (custom-set-faces
- '(org-hide ((t (:foreground "black")))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-hide ((t (:foreground "black"))))
+ '(sml/filename ((t (:inherit sml/global :foreground "color-119"))))
+ '(sml/prefix ((t (:inherit sml/global :foreground "color-57"))))
+ '(writegood-duplicates-face ((t (:background "black" :foreground "color-131"))))
+ '(writegood-passive-voice-face ((t (:background "black" :foreground "color-131"))))
+ '(writegood-weasels-face ((t (:background "black" :foreground "color-131")))))
 

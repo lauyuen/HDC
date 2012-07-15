@@ -1,6 +1,6 @@
 (message "loading org-mode customizations ...")
 (require 'org-latex)
-
+(require 'writegood-mode)
 ;;
 ;; Org-mode Settings
 ;;
@@ -12,6 +12,7 @@
   (setq org-export-htmlize-output-type 'css)
   (add-hook 'org-mode-hook 'visual-line-mode 'append)
   (add-hook 'org-mode-hook 'flyspell-mode 'append)
+  (add-hook 'org-mode-hook 'writegood-mode 'append)
   (global-set-key "\C-ca" 'org-agenda)
   (global-set-key "\C-cb" 'org-iswitchb))
 

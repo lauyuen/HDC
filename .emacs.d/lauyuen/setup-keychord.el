@@ -5,3 +5,4 @@
 (key-chord-define-global "jk" 'ace-jump-mode)
 
 (global-set-key (kbd "C-x f") 'recentf-open-files)
+(define-key key-translation-map [?\C-h] [?\C-?])

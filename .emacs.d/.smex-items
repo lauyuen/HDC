@@ -1,22 +1,22 @@
 
 ;; ----- smex-history -----
 (
- load-theme
- sh-mode
- server-start
+ customize-group
+ sudoedit
+ compile
  package-install
- byte-compile-file
- magit-status
+ lisp-interaction-mode
  grep
+ multi-term
 )
 
 ;; ----- smex-data -----
 (
  (server-start . 3)
  (org-mode . 1)
- (org-indent-mode . 1)
+ (org-indent-mode . 2)
  (sh-mode . 12)
- (kill-rectangle . 2)
+ (kill-rectangle . 3)
  (longlines-mode . 2)
  (toggle-word-wrap . 2)
  (visual-line-mode . 2)
@@ -28,28 +28,50 @@
  (load-theme . 22)
  (goto-line . 1)
  (php-mode . 1)
- (package-install . 28)
- (rainbow-mode . 17)
+ (package-install . 34)
+ (rainbow-mode . 24)
  (set-variable . 1)
- (mark-all-like-this . 1)
+ (mark-all-like-this . 2)
  (auto-composition-mode . 6)
- (lisp-interaction-mode . 2)
+ (lisp-interaction-mode . 3)
  (paredit-mode . 1)
  (color-theme-xp . 1)
  (color-theme-twilight . 4)
- (auto-complete . 5)
+ (auto-complete . 7)
  (ac-start . 2)
  (auto-complete-mode . 5)
  (byte-compile-file . 5)
  (key-chord-mode . 1)
  (ace-jump-mode . 1)
  (package-refresh-contents . 2)
- (rainbow-delimiters-mode . 2)
+ (rainbow-delimiters-mode . 4)
  (cvs-status . 2)
- (grep . 6)
+ (grep . 9)
  (yas/minor-mode . 2)
  (yas/find-snippets . 4)
  (yas/load-directory . 1)
  (magit-status . 1)
- (pretty-mode . 2)
+ (pretty-mode . 5)
+ (writegood-mode . 4)
+ (load-file . 6)
+ (display-battery-mode . 1)
+ (helm-mini . 1)
+ (helm-M-x . 1)
+ (helm-mode . 2)
+ (customize-group . 6)
+ (mark-more-like-this . 7)
+ (ispell . 1)
+ (apache-mode . 1)
+ (undo-tree-mode . 2)
+ (undo-tree-visualize . 1)
+ (shell . 4)
+ (ansi-color-for-comint-mode-on . 4)
+ (ansi-term . 3)
+ (ansi-color-for-comint-mode-off . 1)
+ (eshell . 2)
+ (term . 1)
+ (multi-term . 2)
+ (hardcore-mode . 2)
+ (compile . 11)
+ (sudoedit . 1)
 )

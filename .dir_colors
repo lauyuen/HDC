@@ -28,7 +28,7 @@
 #   where .dircolors is this file.
 
 
-BLK                   38;5;68
+BLK                   38;5;15
 CAPABILITY            38;5;17
 CHR                   38;5;113;1
 DIR                   38;5;30
@@ -38,7 +38,7 @@ FIFO                  38;5;126
 FILE                  38;5;239
 LINK                  target
 MULTIHARDLINK         38;5;220;1
-NORMAL                38;5;239
+NORMAL                38;5;7
 ORPHAN                48;5;196;38;5;232;1
 OTHER_WRITABLE        38;5;33;1
 SETGID                38;5;137;1
