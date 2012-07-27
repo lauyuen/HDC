@@ -13,4 +13,6 @@ if [[ $HOMENAME == "red" ]] {
         export ACLOCAL_PATH="/cse/local/share/aclocal:/cse/local/share/aclocal-1.11:/cse/home/cse03307/os/share/aclocal";
         export PKG_CONFIG_PATH="/cse/home/cse03307/os/lib/pkgconfig:/cse/home/cse03307/os/share/pkgconfig";
 }
-export TERM=rxvt-256color;
+if [[ $TERM == "xterm" ]] {
+        export TERM="xterm-256color"
+}

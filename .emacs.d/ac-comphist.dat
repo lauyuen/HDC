@@ -1,4 +1,20 @@
-((("sudo-ext" .
+((("setf" .
+   [1 0 0 0])
+  ("defadvice" .
+   [0 0 0 0 0 1 0 0 0])
+  ("delete-other-windows" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("delete-other-frames" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("mark-more-like-this" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("global-hl-line-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("ipython" .
+   [0 0 1 0 0 0 0])
+  ("python-mode" .
+   [0 0 1 0 0 0 0 0 0 0 0])
+  ("sudo-ext" .
    [0 0 0 0 1 0 0 0])
   ("global-rainbow-delimiters-mode" .
    [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
@@ -81,7 +97,7 @@
   ("auto-complete" .
    [0 0 0 0 0 0 0 0 1 0 0 0 0])
   ("require" .
-   [6 0 0 4 1 2 0])
+   [7 0 0 5 1 3 0])
   ("dired" .
    [0 0 0 0 1])
   ("directory-file" .
@@ -121,4 +137,12 @@
   ("powerline" .
    [0 0 0 0 0 0 0 0 2])
   ("writegood-mode" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 2])))
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 2])
+  ("org-capture" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("org-capture-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("add-hook" .
+   [0 0 0 1 0 0 0 1])
+  ("lambda" .
+   [1 0 0 0 0 0])))

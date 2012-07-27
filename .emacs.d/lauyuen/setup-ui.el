@@ -31,10 +31,11 @@
 (add-to-list 'sml/replacer-regexp-list '("^:DB:will" ":will:")) 
 (add-to-list 'sml/replacer-regexp-list '("^:will:School/current" ":school:")) 
 
-(yl-add-path "/lauyuen/vendors/multiple-cursors.el")
-(yl-add-path "/lauyuen/vendors/hardcore-mode.el")
 
 (global-rainbow-delimiters-mode 1)
+
+(yl-add-path "/lauyuen/vendors/hardcore-mode.el")
+(yl-add-path "/lauyuen/vendors/multiple-cursorse.el")
 
 (setq too-hardcore-backspace nil)
 (setq too-hardcore-return t)
@@ -42,3 +43,4 @@
 (global-hardcore-mode)
 
 (require 'sudo-ext)
+(global-hl-line-mode)

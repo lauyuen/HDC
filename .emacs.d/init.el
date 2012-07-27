@@ -1,138 +1,144 @@
+;; File:      ~/.emacs
+;; Author:    Yuen Lau
+;; Version:   2
+;; OS:        Arch, Debian, Mint Debian, Snow Leopard, Lion, Windows 7
+;; Modified:  Wed Jul 18 18:52:30 2012
+; ----------------------------------------------------------[ Software Licence ]
+;; Copyright (c) Yuen Lau <hello@yuen-lau.com> 2010-2012
+;; All rights reserved.
 ;;
-;; File:    ~/.emacs
-;; Author:  Yuen Lau
-;; Version: 2
-;; OS:      Arch, Mint Debian, Snow Leopard, Windows 7
-;; LMD:     Wed Oct 27 00:49:12 EDT 2010
+;; Redistribution and use in source and binary forms, with or without
+;; modification, are permitted provided that the following conditions
+;; are met:
+;; 1. Redistributions of source code must retain the above copyright
+;;    notice, this list of conditions and the following disclaimer.
+;; 2. Redistributions in binary form must reproduce the above copyright
+;;    notice, this list of conditions and the following disclaimer in the
+;;    documentation and/or other materials provided with the distribution.
+;; 3. Neither the name of the University nor the names of its contributors
+;;    may be used to endorse or promote products derived from this software
+;;    without specific prior written permission.
 ;;
-
-
+;; THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+;; ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+;; IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+;; ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+;; FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+;; DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+;; OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+;; HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+;; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+;; OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+;; SUCH DAMAGE.
+;;
+; ---------------------------------------------------------------[ Quick Guide ]
+;; Everywhere with a comment explaining what the function does or what the 
+;; variable is should mean that it is safe to tweak and/or hack.
+;;
+;; Have fun.
+;;
+(require 'cl)
+; ----------------------------------------------[ Minial interface in terminal ]
 (if window-system
-    (progn
-      (set-face-attribute 'default nil :height 90))
+      (set-face-attribute 'default nil :height 90)
   (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
     (when (fboundp mode) (funcall mode -1))))
-
-(setq initial-scratch-message nil
+(setf initial-scratch-message nil
       inhibit-startup-screen t)
-;;
-;; Package Loading
-;;
 
+; -----------------------------------------------------------[ Package Loading ]
+;; Don't load incompatible packages.
 (defvar yl-bad-packages '())
 (if (>= emacs-major-version 24) 
     (progn
       (add-to-list 'load-path "~/.emacs.d/emacs24/")
-      (add-to-list 'yl-bad-packages 
-                   '((color-theme  nil)
-                     (color-theme-twilight nil)
-                     (json nil))))
+      (add-to-list 'yl-bad-packages '(
+                                      (color-theme  nil)
+                                      (color-theme-twilight nil)
+                                      (json nil)
+                                      )))
   (progn
     (add-to-list 'load-path "~/.emacs.d/emacs23/")
-    (add-to-list 'yl-bad-packages 
-                 '((twilight-theme nil)))))
-
-
+    (add-to-list 'yl-bad-packages '(
+                                    (twilight-theme nil)
+                                    (twilight-bright-theme nil)
+                                    ))))
 (progn
   (require 'package)
+  ;; Using marmalade and melpa repositories.
   (add-to-list 'package-archives
                '("marmalade" . "http://marmalade-repo.org/packages/") t)
   (add-to-list 'package-archives
                '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-  (setq package-load-list (cons 'all (car yl-bad-packages)))
-
-  
+  (setf package-load-list (cons 'all (car yl-bad-packages)))
   (package-initialize)
   (when (not package-archive-contents)
     (package-refresh-contents))
-  (defvar my-packages '(paredit smex php-mode))
+  ;; List of packages nto always retrieve. 
+  (setf my-packages '(
+                      ace-jump-mode
+                      apache-mode
+                      auto-complete
+;;                      color-theme
+;;                      color-theme-twilight
+                      csharp-mode
+                      helm
+                      iy-go-to-char
+                      json
+                      key-chord
+                      less-css-mode
+                      magit
+                      magithub
+                      mark-more-like-this
+                      mark-multiple
+                      mmm-mode
+                      multi-term
+                      paredit
+                      php-mode
+                      popup
+                      rainbow-delimiters
+                      rainbow-mode
+                      smex
+;;                      twilight-bright-theme
+;;                      twilight-theme
+                      undo-tree
+                      wgrep
+                      writegood-mode
+                      ))
   (dolist (p my-packages)
     (when (not (package-installed-p p))
-      (package-install p)))
-  (setq smex-save-file (concat user-emacs-directory ".smex-items"))
-  (smex-initialize)
-  (global-set-key (kbd "M-x") 'smex)
-  
-  (require 'mark-more-like-this)
-  (global-set-key (kbd "C-<") 'mark-previous-like-this)
-  (global-set-key (kbd "C->") 'mark-next-like-this))
+      (package-install p))))
 
+; -----------------------------------------[ Load User and Host configurations ]
 (progn
-  (setq yld-system-config (concat user-emacs-directory system-name ".el")
-        yld-user-config (concat user-emacs-directory user-login-name ".el")
-        yld-user-dir (concat user-emacs-directory user-login-name))
-
-  (defun yld-eval-after-init (form)
+  ;; Note: Unless your username is also "lauyuen" you won't be able to use my
+  ;; configurations unless you rename the folder ~/.emacs.d/lauyuen to
+  ;; ~/.emacs.d/$USER, where $USER is your username.
+  (setq custom-file (concat user-emacs-directory user-login-name "/setup.el")
+        starter-system-config (concat user-emacs-directory system-name ".el")
+        starter-user-config (concat user-emacs-directory user-login-name ".el")
+        starter-user-dir (concat user-emacs-directory user-login-name))
+  (defun starter-eval-after-init (form)
     (let ((func (list 'lambda nil form)))
       (add-hook 'after-init-hook func)
       (when after-init-time
         (eval form))))
-
-  (yld-eval-after-init
+  (starter-eval-after-init
    '(progn
-      (when (file-exists-p yld-system-config) (load yld-system-config))
-      (when (file-exists-p yld-user-config) (load yld-user-config))
-      (when (file-exists-p yld-user-dir)
-        (mapc 'load (directory-files yld-user-dir t "^[^#].*el$"))))))
+      (when (file-exists-p starter-system-config) (load starter-system-config))
+      (when (file-exists-p starter-user-config) (load starter-user-config))
+      (when (file-exists-p starter-user-dir)
+        (mapc 'load (directory-files starter-user-dir t "^[^#].*el$"))))))
 
 (defun yl-add-path (p)
   (add-to-list 'load-path (concat user-emacs-directory p)))
-
-;;
-;; Custom Variables
-;;
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(TeX-PDF-mode t)
- '(TeX-source-correlate-method (quote synctex))
- '(TeX-source-correlate-mode t)
- '(TeX-source-correlate-start-server t)
- '(TeX-view-program-list (quote (("Okular" "okular --unique %o#src:%n%b"))))
- '(TeX-view-program-selection (quote ((output-pdf "Okular") (output-dvi "xdvi") (output-pdf "xpdf") (output-html "xdg-open"))))
- '(c-basic-offset 4)
- '(c-default-style "bsd")
- '(column-number-mode t)
- '(delete-selection-mode t)
- '(display-time-mode t)
- '(ido-enable-flex-matching t)
- '(indent-tabs-mode nil)
- '(indicate-buffer-boundaries (quote ((t . right) (top . left))))
- '(indicate-empty-lines t)
- '(recentf-mode t)
- '(safe-local-variable-values (quote ((time-stamp-active . t))))
- '(save-place t nil (saveplace))
- '(show-paren-mode t)
- '(sml/active-background-color "color-16")
- '(sml/hidden-modes (quote ("AC" "yas" "hc" "Undo-Tree" "hl-p")))
- '(sml/inactive-background-color "color-234")
- '(sml/show-battery nil)
- '(sml/show-time t)
- '(transient-mark-mode t)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 
 ;; Emacs server
 (require 'server)
 (when (and (functionp 'server-running-p) (not (server-running-p)))
   (server-start))
 
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
+(setf backup-directory-alist
+      `((".*" . ,temporary-file-directory))
+      auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-hide ((t (:foreground "black"))))
- '(sml/filename ((t (:inherit sml/global :foreground "color-119"))))
- '(sml/prefix ((t (:inherit sml/global :foreground "color-57"))))
- '(writegood-duplicates-face ((t (:background "black" :foreground "color-131"))))
- '(writegood-passive-voice-face ((t (:background "black" :foreground "color-131"))))
- '(writegood-weasels-face ((t (:background "black" :foreground "color-131")))))
-

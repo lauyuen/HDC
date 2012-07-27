@@ -5,14 +5,19 @@
 ;; Org-mode Settings
 ;;
 (progn
-  (setq org-log-done t)
-  (setq org-startup-folded 'content)
-  (setq org-startup-indented t)
-  (setq org-export-html-validation-link nil)
-  (setq org-export-htmlize-output-type 'css)
+  (setq org-log-done t
+        org-startup-folded 'content
+        org-startup-indented t
+        org-export-html-validation-link nil
+        org-export-htmlize-output-type 'css
+        org-directory "~/org/"
+        org-mobile-directory "~/Dropbox/orgm/"
+        org-mobile-files '(org-agenda-files)
+        org-index-for-pull "~/org/inbox.org")
   (add-hook 'org-mode-hook 'visual-line-mode 'append)
   (add-hook 'org-mode-hook 'flyspell-mode 'append)
   (add-hook 'org-mode-hook 'writegood-mode 'append)
+  (add-hook 'after-init-hook 'org-mobile-pull)
   (global-set-key "\C-ca" 'org-agenda)
   (global-set-key "\C-cb" 'org-iswitchb))
 
@@ -21,7 +26,8 @@
 ;; Adgenda files
 (setq org-agenda-files (list "~/org/work.org"
                              "~/org/school.org"
-                             "~/org/life.org"))
+                             "~/org/life.org"
+                             "~/org/gtd.org"))
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d!/!)")
               (sequence "WAITING(w@/!)" "SOMEDAY(S!)" "|" "CANCELLED(c@/!)" "PHONE")
@@ -39,13 +45,25 @@
               ("CLOSED" :foreground "forest green" :weight bold)
               ("PHONE" :foreground "forest green" :weight bold))))
 
+
+
+;; Capture setup
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+(define-key global-map "\C-cc" 'org-capture)
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/gtd.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
+
 ;; Org Latex Setting
 (add-to-list 'org-export-latex-classes
              '("yarticle"
                "\\documentclass[11pt,letterpaper]{article}
 \\usepackage[T1]{fontenc}
 %\\usepackage{fontspec}
-\\usepackage{graphicx} 
+\\usepackage{graphicx}
 %\\defaultfontfeatures{Mapping=tex-text}
 \\usepackage{hyperref}
 \\hypersetup{

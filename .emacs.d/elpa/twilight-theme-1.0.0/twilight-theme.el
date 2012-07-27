@@ -27,7 +27,7 @@
 
 (custom-theme-set-faces
  'twilight
- '(default ((t (:background "#141414" :foreground "#f8f8f8"))))
+ '(default ((t (:background "#121212" :foreground "#f8f8f8"))))
  '(cursor ((t (:foreground "#a7a7a7"))))
  '(region ((t (:background "#27292a"))))
  '(blue ((t (:foreground "blue"))))
@@ -55,7 +55,7 @@
  '(gui-element ((t (:background "#D4D0C8" :foreground "black"))))
  '(region ((t (:background "#27292A"))))
  '(mode-line ((t (:background "grey75" :foreground "black"))))
- '(highlight ((t (:background "#111111"))))
+ '(highlight ((t (:background "#1c1c1c"))))
  '(highline-face ((t (:background "SeaGreen"))))
  '(left-margin ((t (nil))))
  '(text-cursor ((t (:background "yellow" :foreground "black"))))
