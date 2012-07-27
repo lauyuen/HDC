@@ -1,7 +1,7 @@
 (message "loading yasnippet customizations ...")
-(yl-add-path "lauyuen/vendors/yasnippet")
+(yl-add-path "lauyuen/vendor/yasnippet")
 (require 'yasnippet)
-(setq yas/snippet-dirs (concat user-emacs-directory "lauyuen/vendors/yasnippet-snippets"))
+(setq yas/snippet-dirs (concat user-emacs-directory "lauyuen/vendor/yasnippet-snippets"))
 
 ;; (setq yas/snippet-dirs '("~/.emacs.d/snippets"))
 (yas/global-mode 1)
