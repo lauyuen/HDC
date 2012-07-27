@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: comment section header
-# key: csh
-# --
-`(ca-with-comment "")`
-`(ca-with-comment "$1")`
-`(ca-with-comment "")`
-$0
