@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ magit-status
+ wgrep-change-to-wgrep-mode
+ grep
  package-install
  package-refresh-contents
- magit-status
  load-file
  org-mobile-pull
- org-mobile-push
- warp-mode
 )
 
 ;; ----- smex-data -----
@@ -46,11 +46,11 @@
  (package-refresh-contents . 3)
  (rainbow-delimiters-mode . 4)
  (cvs-status . 2)
- (grep . 19)
+ (grep . 20)
  (yas/minor-mode . 2)
  (yas/find-snippets . 4)
  (yas/load-directory . 1)
- (magit-status . 6)
+ (magit-status . 10)
  (pretty-mode . 5)
  (writegood-mode . 4)
  (load-file . 8)
@@ -107,4 +107,5 @@
  (org-mobile-push . 3)
  (org-mobile-pull . 2)
  (warp-mode . 3)
+ (wgrep-change-to-wgrep-mode . 1)
 )
