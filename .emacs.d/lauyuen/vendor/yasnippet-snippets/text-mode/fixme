@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: fixme
+# key: fxm
+# --
+`(ca-with-comment "FIXME: $0")`
