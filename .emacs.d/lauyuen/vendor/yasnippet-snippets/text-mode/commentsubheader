@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: comment section sub-header
+# key: cssh
+# --
+${1:$(concat comment-start " " (make-string (- fill-column
+             (+ (length comment-start)
+                (length comment-end)
+                (length text) 5)) ?\-))}[ ${1:Section Name} ]`comment-end`$0

@@ -1,4 +1,4 @@
-(yl-add-path "lauyuen/vendors")
+(yl-add-path "lauyuen/vendor")
 (require 'ac-math)
 (add-to-list 'ac-modes 'latex-mode)   ; make auto-complete aware of {{{latex-mode}}}
 (defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources

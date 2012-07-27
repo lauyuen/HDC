@@ -11,7 +11,7 @@
 (custom-set-faces
  '(org-hide ((t (:foreground "black")))))
 
-(yl-add-path "/lauyuen/vendors/pretty-mode")
+(yl-add-path "/lauyuen/vendor/pretty-mode")
 (require 'pretty-mode)
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -34,8 +34,8 @@
 
 (global-rainbow-delimiters-mode 1)
 
-(yl-add-path "/lauyuen/vendors/hardcore-mode.el")
-(yl-add-path "/lauyuen/vendors/multiple-cursorse.el")
+(yl-add-path "/lauyuen/vendor/hardcore-mode.el")
+(yl-add-path "/lauyuen/vendor/multiple-cursorse.el")
 
 (setq too-hardcore-backspace nil)
 (setq too-hardcore-return t)

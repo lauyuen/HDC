@@ -1,4 +1,4 @@
-(yl-add-path "/lauyuen/vendors/warp")
+(yl-add-path "/lauyuen/vendor/warp")
 (require 'warp)
 (global-set-key (kbd "C-c C-w C-w") warp-mode) ;; Modify key bind as you want.
 
