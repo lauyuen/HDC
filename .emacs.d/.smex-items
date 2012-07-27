@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ package-install
+ package-refresh-contents
+ magit-status
+ load-file
  org-mobile-pull
  org-mobile-push
  warp-mode
- grep
- artist-mode
- load-file
- dired
 )
 
 ;; ----- smex-data -----
@@ -28,7 +28,7 @@
  (load-theme . 24)
  (goto-line . 1)
  (php-mode . 1)
- (package-install . 36)
+ (package-install . 40)
  (rainbow-mode . 25)
  (set-variable . 1)
  (mark-all-like-this . 2)
@@ -43,17 +43,17 @@
  (byte-compile-file . 5)
  (key-chord-mode . 1)
  (ace-jump-mode . 1)
- (package-refresh-contents . 2)
+ (package-refresh-contents . 3)
  (rainbow-delimiters-mode . 4)
  (cvs-status . 2)
  (grep . 19)
  (yas/minor-mode . 2)
  (yas/find-snippets . 4)
  (yas/load-directory . 1)
- (magit-status . 4)
+ (magit-status . 6)
  (pretty-mode . 5)
  (writegood-mode . 4)
- (load-file . 7)
+ (load-file . 8)
  (display-battery-mode . 1)
  (helm-mini . 1)
  (helm-M-x . 1)
