@@ -6,7 +6,7 @@
 ;;;### (autoloads (csharp-mode csharp-cmd-line-limit csharp-msbuild-tool
 ;;;;;;  csharp-make-tool csharp-want-imenu csharp-want-yasnippet-fixup
 ;;;;;;  csharp-want-flymake-fixup csharp-mode-hook) "csharp-mode"
-;;;;;;  "csharp-mode.el" (20486 56770 523970 287000))
+;;;;;;  "csharp-mode.el" (20499 25073 487958 573000))
 ;;; Generated autoloads from csharp-mode.el
 
 (defvar csharp-mode-hook nil "\
@@ -237,8 +237,8 @@ Key bindings:
 
 ;;;***
 
-;;;### (autoloads nil nil ("csharp-mode-pkg.el") (20486 56770 652297
-;;;;;;  503000))
+;;;### (autoloads nil nil ("csharp-mode-pkg.el") (20499 25073 616309
+;;;;;;  525000))
 
 ;;;***
 

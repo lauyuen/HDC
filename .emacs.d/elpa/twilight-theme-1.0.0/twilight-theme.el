@@ -61,7 +61,28 @@
  '(text-cursor ((t (:background "yellow" :foreground "black"))))
  '(toolbar ((t (nil))))
  '(underline ((nil (:underline nil))))
- '(zmacs-region ((t (:background "snow" :foreground "blue")))))
+ '(zmacs-region ((t (:background "snow" :foreground "blue"))))
+
+ '(diff-added ((t (:inherit diff-changed :background "#113311"))))
+ '(diff-file-header ((t (:background "color-232" :weight bold))))
+ '(diff-header ((t (:background "color-232"))))
+ '(diff-removed ((t (:inherit diff-changed :background "#331111"))))
+ '(font-lock-comment-face ((t (:foreground "snow4"))))
+ '(hl-line ((t (:background "#1c1c1c"))))
+
+ '(mm/master-face ((t (:inherit text-cursor))))
+ '(mm/mirror-face ((t (:inherit text-cursor))))
+ '(org-hide ((t (:foreground "black"))))
+ '(show-paren-match ((t (:background "color-22"))))
+ '(show-paren-mismatch ((t (:background "color-53" :foreground "white"))))
+ '(sml/filename ((t (:inherit sml/global :foreground "lawn green"))))
+ '(sml/prefix ((t (:inherit sml/global :foreground "dark violet"))))
+ '(vhl/default-face ((t (:inherit highlight))))
+ '(writegood-duplicates-face ((t (:background "black" :foreground "color-131"))))
+ '(writegood-passive-voice-face ((t (:background "black" :foreground "color-131"))))
+ '(writegood-weasels-face ((t (:background "black" :foreground "color-131"))))
+ '(yas/field-highlight-face ((t (:background "color-232"))))
+)
 
 ;;;###autoload
 (when load-file-name

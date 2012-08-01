@@ -1,8 +1,8 @@
-;; File:      ~/.emacs
+;; File:      ~/.emacs.d/init.el
 ;; Author:    Yuen Lau
 ;; Version:   2
 ;; OS:        Arch, Debian, Mint Debian, Snow Leopard, Lion, Windows 7
-;; Modified:  Wed Jul 18 18:52:30 2012
+;; Time-stamp: <2012-07-27 20:37 (lauyuen)>
 ; ----------------------------------------------------------[ Software Licence ]
 ;; Copyright (c) Yuen Lau <hello@yuen-lau.com> 2010-2012
 ;; All rights reserved.
@@ -79,8 +79,8 @@
                       ace-jump-mode
                       apache-mode
                       auto-complete
-;;                      color-theme
-;;                      color-theme-twilight
+;;                    color-theme
+;;                    color-theme-twilight
                       csharp-mode
                       helm
                       iy-go-to-char
@@ -99,12 +99,13 @@
                       rainbow-delimiters
                       rainbow-mode
                       smex
-;;                      twilight-bright-theme
-;;                      twilight-theme
+;;                    twilight-bright-theme
+;;                    twilight-theme
                       undo-tree
                       wgrep
                       writegood-mode
                       ))
+
   (dolist (p my-packages)
     (when (not (package-installed-p p))
       (package-install p))))
@@ -142,3 +143,4 @@
       `((".*" . ,temporary-file-directory))
       auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+(put 'dired-find-alternate-file 'disabled nil)
