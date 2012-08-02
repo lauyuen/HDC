@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- disable-theme
- load-theme
+ sml/setup
  grep
- eval-buffer
- package-install
- compilation-shell-minor-mode
- auto-composition-mode
+ comment-region
+ comment-indent
+ uncomment-region
+ kill-some-buffers
+ magit-status
 )
 
 ;; ----- smex-data -----
@@ -15,7 +15,7 @@
  (server-start . 3)
  (org-mode . 3)
  (org-indent-mode . 7)
- (sh-mode . 12)
+ (sh-mode . 13)
  (kill-rectangle . 4)
  (longlines-mode . 7)
  (toggle-word-wrap . 2)
@@ -23,9 +23,9 @@
  (yank-rectangle . 2)
  (menu-bar-mode . 5)
  (xterm-mouse-mode . 9)
- (list-colors-display . 4)
+ (list-colors-display . 5)
  (org-agenda . 1)
- (load-theme . 56)
+ (load-theme . 59)
  (goto-line . 1)
  (php-mode . 1)
  (package-install . 56)
@@ -46,11 +46,11 @@
  (package-refresh-contents . 3)
  (rainbow-delimiters-mode . 25)
  (cvs-status . 2)
- (grep . 32)
+ (grep . 33)
  (yas/minor-mode . 4)
  (yas/find-snippets . 4)
  (yas/load-directory . 1)
- (magit-status . 12)
+ (magit-status . 14)
  (pretty-mode . 5)
  (writegood-mode . 4)
  (load-file . 8)
@@ -64,12 +64,12 @@
  (apache-mode . 1)
  (undo-tree-mode . 2)
  (undo-tree-visualize . 4)
- (shell . 12)
+ (shell . 16)
  (ansi-color-for-comint-mode-on . 5)
  (ansi-term . 3)
  (ansi-color-for-comint-mode-off . 1)
  (eshell . 3)
- (term . 2)
+ (term . 3)
  (multi-term . 2)
  (hardcore-mode . 2)
  (compile . 14)
@@ -82,7 +82,7 @@
  (helm-find-files . 1)
  (ac-complete-yasnippet . 1)
  (hl-line-mode . 11)
- (disable-theme . 31)
+ (disable-theme . 34)
  (flymake-mode . 3)
  (flyspell-correct-word . 1)
  (flyspell-correct-word-before-point . 1)
@@ -148,8 +148,8 @@
  (tags-table-mode . 1)
  (list-tags . 1)
  (indent-for-comment . 1)
- (comment-indent . 4)
- (uncomment-region . 1)
+ (comment-indent . 5)
+ (uncomment-region . 2)
  (volatile-highlights-mode . 3)
  (tool-bar-mode . 2)
  (scroll-bar-mode . 2)
@@ -179,4 +179,10 @@
  (ido-ubiquitous . 1)
  (python-shell-completion-complete-at-point . 1)
  (evil-mode . 2)
+ (ido-kill-buffer . 1)
+ (kill-some-buffers . 2)
+ (sort-lines . 1)
+ (magit-log . 1)
+ (comment-region . 1)
+ (sml/setup . 1)
 )

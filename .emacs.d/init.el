@@ -2,7 +2,7 @@
 ;; Author:    Yuen Lau
 ;; Version:   2
 ;; OS:        Arch, Debian, Mint Debian, Snow Leopard, Lion, Windows 7
-;; Time-stamp: <2012-07-27 20:37 (lauyuen)>
+;; Time-stamp: <2012-08-02 15:55 (lauyuen)>
 ; ----------------------------------------------------------[ Software Licence ]
 ;; Copyright (c) Yuen Lau <hello@yuen-lau.com> 2010-2012
 ;; All rights reserved.

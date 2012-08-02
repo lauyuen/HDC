@@ -15,7 +15,7 @@
  '(column-number-mode t)
  '(confirm-nonexistent-file-or-buffer nil)
  '(custom-safe-themes (quote ("159bb8f86836ea30261ece64ac695dc490e871d57107016c09f286146f0dae64" "470e7c84ff1606b88b46620fcc839d87d9f0c1a4b2eb9f2b0ac5dfaeca1dbab4" "fca8ce385e5424064320d2790297f735ecfde494674193b061b9ac371526d059" default)))
- '(delete-by-moving-to-trash t)
+ ;; '(delete-by-moving-to-trash t)
  '(delete-selection-mode t)
  '(display-time-mode t)
  '(fill-column 80)
