@@ -28,7 +28,7 @@ else
 fi
 
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%F{blue}±|%f%F{red}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%F{blue}±<%f%F{red}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}%Bx%b%F{blue}|%f%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}<3%F{blue}|"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}%Bx%b%F{blue}>%f%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}<3%F{blue}>"
