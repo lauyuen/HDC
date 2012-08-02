@@ -49,6 +49,31 @@ alias top20="du -ah | sort -rh | head -20"
 alias less="/usr/share/vim/vim72/macros/less.sh"
 alias aptitude="nocorrect aptitude"
 
+alias -s c=e
+alias -s el=e
+alias -s h=e
+alias -s java=e
+alias -s org=e
+alias -s php=e
+alias -s py=e
+alias -s bash=e
+alias -s zsh=e
+alias -s sh=e
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g C='| wc -l'
+alias -g L="| less"
+alias -g G='| egrep'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g EL="|& less"
+alias -g EG='|& egrep'
+alias -g EH='|& head'
+alias -g ET='|& tail'
+
+
 #  -----------------------------------------------------------------[ Programs ]
 calc(){ awk "BEGIN { print $* }" ;}
 

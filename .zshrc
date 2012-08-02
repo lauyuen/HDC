@@ -19,7 +19,8 @@ export ZSH_THEME="will"
 plugins=(git zsh-syntax-highlighting)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-source $ZSH/oh-my-zsh.sh
 eval $( dircolors -b ~/.dir_colors )
+source $ZSH/oh-my-zsh.sh
+
 
 # Customize to your needs...
