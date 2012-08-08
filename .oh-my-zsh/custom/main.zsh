@@ -33,10 +33,14 @@ if (( $+commands[emacs-snapshot] )) ; then
    alias emacs="emacs-snapshot"
    alias ec="emacsclient.emacs-snapshot"
 fi
+if (( $+commands[colorgcc] )); then alias gcc="colorgcc"; fi
+if (( $+commands[colormake] )); then alias make="colormake"; fi
+if (( $+commands[colortail] )); then alias tail="colortail"; fi
+if (( $+commands[dfc] )); then alias df="dfc"; fi
 if (( $+commands[ls++] )) ; then
     alias ls="ls++ --potsf"
 else
-    alias ls="ls --color"
+    alias ls="ls -hF --color"
 fi
 alias javad="javadoc -tag param \
       	     -tag pre.:a:\"Precondition: \" -tag return -d ./doc\

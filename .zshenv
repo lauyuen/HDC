@@ -16,3 +16,7 @@ if [[ $HOMENAME == "red" ]] {
 if [[ $TERM == "xterm" ]] {
         export TERM="xterm-256color"
 }
+
+if [[ -d "/usr/local/lib/cw" ]] {
+        export PATH="/usr/local/lib/cw:$PATH"
+}

@@ -7,8 +7,7 @@
     (require 'color-theme)
     (add-to-list 'load-path (concat package-user-dir "/color-theme-twilight-0.1"))
     (autoload 'color-theme-twilight "color-theme-twilight" nil t)
-    (color-theme-twilight)
-    ))
+    (color-theme-twilight)))
 
 
 (setq scroll-margin 0

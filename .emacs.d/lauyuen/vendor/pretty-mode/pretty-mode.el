@@ -141,7 +141,7 @@ expected by `pretty-patterns'"
 (defvar pretty-patterns
   (let* ((lispy '(scheme emacs-lisp lisp))
          (mley '(tuareg haskell sml))
-         (c-like '(c c++ perl sh python java ess ruby))
+         (c-like '(c c++ perl sh python java ess ruby csharp))
          (all (append lispy mley c-like (list 'octave))))
     (pretty-compile-patterns
      `(
@@ -152,7 +152,7 @@ expected by `pretty-patterns'"
        (?≤ ("<=" ,@all))
        (?≥ (">=" ,@all))
        (?← ("<-" ,@mley ess))
-       (?➛ ("->" ,@mley ess c c++ perl))
+       (?➛ ("->" ,@mley ess c c++ csharp perl))
        (?↑ ("\\^" tuareg))
        (?⟹ ("=>" sml perl ruby haskell))
        (?∅ ("nil" emacs-lisp ruby)
@@ -181,8 +181,10 @@ expected by `pretty-patterns'"
            ("'d" ,@mley))
        (?ε ("epsilon" ,@all))
        (?θ ("theta" ,@all))
-       (?σ ("sigma" ,@all))
-       (?μ ("mu" ,@all))
+       (?σ ("sigma" ,@all)
+           ("pSigma" ,@all))
+       (?μ ("mu" ,@all)
+           ("pMu" ,@all))
        (?λ ("lambda" ,@all)
 ;;;        ("case-\\(lambda\\)" scheme)
            ("fn" sml)
