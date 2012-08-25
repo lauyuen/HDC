@@ -2,7 +2,7 @@
 ;; Author:    Yuen Lau
 ;; Version:   2
 ;; OS:        Arch, Debian, Mint Debian, Snow Leopard, Lion, Windows 7
-;; Time-stamp: <2012-08-02 15:55 (lauyuen)>
+;; Time-stamp: <2012-08-14 15:20 (lauyuen)>
 ; ----------------------------------------------------------[ Software Licence ]
 ;; Copyright (c) Yuen Lau <hello@yuen-lau.com> 2010-2012
 ;; All rights reserved.
@@ -39,12 +39,22 @@
 ;;
 (require 'cl)
 ; ----------------------------------------------[ Minial interface in terminal ]
+(dolist (mode '(tool-bar-mode scroll-bar-mode blink-cursor-mode))
+  (when (fboundp mode) (funcall mode -1)))
 (if window-system
-      (set-face-attribute 'default nil :height 90)
-  (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
-    (when (fboundp mode) (funcall mode -1))))
+    (set-face-attribute 'default nil :height 90)
+  (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)))
 (setf initial-scratch-message nil
       inhibit-startup-screen t)
+
+; ---------------------------------------------------------------[ System Type ]
+(defvar system-type-as-string (prin1-to-string system-type))
+(defvar on_windows_nt (string-match "windows-nt" system-type-as-string))
+(defvar on_darwin     (string-match "darwin" system-type-as-string))
+(defvar on_gnu_linux  (string-match "gnu/linux" system-type-as-string))
+(defvar on_cygwin     (string-match "cygwin" system-type-as-string))
+(defvar on_solaris    (string-match "usg-unix-v" system-type-as-string))
+
 
 ; -----------------------------------------------------------[ Package Loading ]
 ;; Don't load incompatible packages.

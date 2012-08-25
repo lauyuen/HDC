@@ -18,6 +18,8 @@
 
 (global-undo-tree-mode)
 (sml/setup)
+(add-to-list 'sml/replacer-regexp-list '("^c:/Users/lauyuen/" ":lauyuen:"))
+(add-to-list 'sml/replacer-regexp-list '("^c:/Users/lauyuen/Desktop/" ":Desktop:"))
 (add-to-list 'sml/replacer-regexp-list '("^~/Notes/" ":Note:"))
 (add-to-list 'sml/replacer-regexp-list '("^~/Dropbox/" ":DB:"))
 (add-to-list 'sml/replacer-regexp-list '("^~/Dropbox/will" ":DB:will:")) 
@@ -26,7 +28,13 @@
 (global-rainbow-delimiters-mode 1)
 
 (yl-add-path "/lauyuen/vendor/hardcore-mode.el")
-(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
+
+(if on_windows_nt
+    (progn 
+      (add-to-list 'default-frame-alist '(font . "Consolas-11"))
+      (load-theme 'twilight-anti-bright 1))
+    (add-to-list 'default-frame-alist '(font . "Inconsolata-10")))
+
 
 ; ---------------------------------------------------[ Extras External Goodies ]
 (setq too-hardcore-backspace nil)

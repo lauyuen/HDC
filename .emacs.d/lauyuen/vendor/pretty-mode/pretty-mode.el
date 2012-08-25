@@ -185,6 +185,8 @@ expected by `pretty-patterns'"
            ("pSigma" ,@all))
        (?μ ("mu" ,@all)
            ("pMu" ,@all))
+       (?ω ("omega" ,@all))
+       (?ρ ("rho" ,@all))
        (?λ ("lambda" ,@all)
 ;;;        ("case-\\(lambda\\)" scheme)
            ("fn" sml)
